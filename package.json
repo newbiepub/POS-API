@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon lib/index.js --exec babel-node --presets es2016-node5,stage-3"
+    "start": "nodemon lib/index.js --exec babel-node --presets es2016-node5,stage-3",
+    "build": "babel lib -s -D -d dist --presets es2016-node5,stage-3,babili",
+    "serve": "node dist/index.js"
   },
   "dependencies": {
     "async": "^2.2.0",
@@ -28,9 +30,15 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-babili": "^0.1.4",
     "babel-preset-es2016-node5": "^1.1.2",
     "babel-preset-stage-3": "^6.24.1",
-    "babel-register": "^6.11.6"
+    "babel-register": "^6.11.6",
+    "babili": "^0.1.4",
+    "webpack": "^3.5.5",
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-hot-middleware": "^2.18.2"
   },
   "author": "LP-Team",
   "license": "ISC"
