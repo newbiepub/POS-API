@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon lib/index.js --exec babel-node --presets es2016-node5,stage-3",
-    "build": "babel lib -s -D -d dist --presets es2016-node5,stage-3,babili",
+    "build": "babel lib -s -D -d dist --presets es2016-node5,stage-3,babel-preset-minify",
     "serve": "node dist/index.js"
   },
   "dependencies": {
@@ -22,6 +22,7 @@
     "finalhandler": "^1.0.1",
     "helmet": "^3.5.0",
     "init": "^0.1.2",
+    "level": "^1.7.0",
     "lodash": "^4.17.4",
     "mongoose": "^4.4.19",
     "querystring": "^0.2.0",
@@ -31,11 +32,11 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.2",
-    "babel-preset-babili": "^0.1.4",
+    "babel-minify": "^0.2.0",
     "babel-preset-es2016-node5": "^1.1.2",
+    "babel-preset-minify": "^0.2.0",
     "babel-preset-stage-3": "^6.24.1",
     "babel-register": "^6.11.6",
-    "babili": "^0.1.4",
     "webpack": "^3.5.5",
     "webpack-dev-middleware": "^1.12.0",
     "webpack-hot-middleware": "^2.18.2"
