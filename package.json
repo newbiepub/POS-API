@@ -12,7 +12,6 @@
   "dependencies": {
     "async": "^2.2.0",
     "body-parser": "^1.17.2",
-    "cheerio": "^0.22.0",
     "concat-stream": "^1.6.0",
     "consolidate": "^0.14.5",
     "cookie-parser": "^1.4.3",
@@ -22,7 +21,6 @@
     "finalhandler": "^1.0.1",
     "helmet": "^3.5.0",
     "init": "^0.1.2",
-    "level": "^1.7.0",
     "lodash": "^4.17.4",
     "mongoose": "^4.4.19",
     "querystring": "^0.2.0",
