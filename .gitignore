@@ -1,13 +1,9 @@
 node_modules
 .idea
 
-#PACKAGE LOGS
-package-lock.json
-
 # OSX
 #
 .DS_Store
 
 #YARN
 yarn-error.log
-yarn.lock
