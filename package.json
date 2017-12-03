@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon lib/index.js --exec babel-node --presets es2016-node5,stage-3",
+    "node": "babel-node lib/index.js --presets es2016-node5,stage-3",
     "inspect": "nodemon lib/index.js --exec babel-node --presets es2016-node5,stage-3 --inspect-brk",
     "build": "babel lib -s -D -d dist",
     "webpack": "webpack -p",
