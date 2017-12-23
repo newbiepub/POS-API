@@ -127,7 +127,7 @@
                             {Tên công ty}<br>
                             {Địa chỉ}<br>
                             {Số điện thoại}<br>
-                            {Email}
+                            {{company.email}}
                         </td>
                     </tr>
                 </table>
@@ -139,18 +139,17 @@
                 <table>
                     <tr>
                         <td>
-
-                            Mã hoá đơn #: {5a375b657651640a03135fb5}<br>
-                            Ngày tạo: {12 Tháng 1, 2015}<br>
-                            Hình thức thanh toán : {Trả trước}
+                            Mã hoá đơn #: {invoice._id}<br>
+                            Ngày tạo: {invoice.createdAt}<br>
+                            Hình thức thanh toán : {trans.paymentMethod}
                         </td>
 
-                        <td>
+                        <!--<td>
                             {Tên Khách hàng}<br>
                             {Địa chỉ}<br>
                             {Số điện thoại}<br>
                             {Email}
-                        </td>
+                        </td>-->
                     </tr>
                 </table>
             </td>
@@ -172,7 +171,6 @@
                 Giá
             </td>
         </tr>
-
         <tr class="item">
             <td>
                 {Tên hàng}
