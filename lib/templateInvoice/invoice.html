@@ -124,7 +124,7 @@
                             <p style="font-size: 45px">HÓA ĐƠN</p>
                         </td>
                         <td style="width: 30%;text-align: right;">
-                            {Tên công ty}<br>
+                            {{company.companyName}}<br>
                             {Địa chỉ}<br>
                             {Số điện thoại}<br>
                             {{company.email}}
@@ -139,9 +139,9 @@
                 <table>
                     <tr>
                         <td>
-                            Mã hoá đơn #: {invoice._id}<br>
-                            Ngày tạo: {invoice.createdAt}<br>
-                            Hình thức thanh toán : {trans.paymentMethod}
+                            <strong>Mã hoá đơn:</strong> {{invoice.invoiceId}}<br>
+                            <strong>Ngày tạo:</strong> {{invoice.createdAt}}<br>
+                            <strong>Hình thức thanh toán:</strong> {{trans.paymentMethod}}
                         </td>
 
                         <!--<td>
@@ -171,72 +171,46 @@
                 Giá
             </td>
         </tr>
+        {{#productItems}}
         <tr class="item">
             <td>
-                {Tên hàng}
+                {{name}}
             </td>
             <td>
-                {12312}
+                {{quantity}}
             </td>
             <td>
-                {cái}
+                {{unit}}
             </td>
             <td>
-                {123121}đ
+                {{price}}
             </td>
         </tr>
-        <tr class="item">
+            {{#discount}}
+                <tr class="item">
 
-            <td style="font-weight: 500;text-align: right">
-                Khuyến mãi:
-            </td>
-            <td>
-                {Tên khuyến mãi}
-            </td>
-            <td>
-                ({20%})
-            </td>
-            <td>
-                {-1221}đ
-            </td>
+                    <td style="font-weight: 500;text-align: right">
+                        Khuyến mãi:
+                    </td>
+                    <td>
+                        {{name}}
+                    </td>
+                    <td>
+                        {{discountValue}}
+                    </td>
+                    <td>
+                        {{discount}}
+                    </td>
 
-        </tr>
-
-        <tr class="item">
-            <td>
-                {Tên hàng}
-            </td>
-            <td>
-                {12312}
-            </td>
-            <td>
-                {cái}
-            </td>
-            <td>
-                {123121}đ
-            </td>
-        </tr>
-
-        <tr class="item">
-            <td>
-                {Tên hàng}
-            </td>
-            <td>
-                {12312}
-            </td>
-            <td>
-                {cái}
-            </td>
-            <td>
-                {123121}đ
-            </td>
-        </tr>
+                </tr>
+            {{/discount}}
+        {{/productItems}}
         <tr class="total">
             <td></td>
             <td></td>
             <td></td>
             <td>
-                Tổng: {12312}đ
+                <strong>Tổng:</strong> {{total}}
             </td>
         </tr>
     </table>
