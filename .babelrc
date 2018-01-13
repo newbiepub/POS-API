@@ -1,4 +1,4 @@
 {
-  "presets": ["es2016-node5", "stage-3"],
-  "plugins": ["transform-runtime"]
+  "presets": ["env", "stage-3"],
+  "plugins": ["transform-runtime", "babel-plugin-inline-import"]
 }

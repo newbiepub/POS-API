@@ -1,0 +1,4 @@
+#Root Query
+type Query {
+    users: [User]
+}

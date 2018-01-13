@@ -1,0 +1,21 @@
+#User Profile fields
+type UserProfile {
+    name: String
+    address: String
+    phoneNumber: String
+}
+
+#Role
+type Role {
+    _id: String
+    roleName: String
+}
+
+#User
+type User {
+    email: String,
+    username: String,
+    roles: [Role]
+    profile: UserProfile
+    companyId: String
+}
