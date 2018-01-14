@@ -11,11 +11,21 @@ type Role {
     roleName: String
 }
 
-#User
-type User {
-    email: String,
-    username: String,
+interface User {
+    profile: UserProfile
+}
+
+#Get Current Company
+type CurrentCompany implements User {
     roles: [Role]
     profile: UserProfile
+    email: String
+}
+
+#Get Current Employee
+type CurrentEmployee implements User {
+    roles: [Role]
+    profile: UserProfile
+    username: String
     companyId: String
 }
