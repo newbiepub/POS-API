@@ -1,0 +1,7 @@
+type Currency {
+    _id: String!
+    name: String!
+    employeeId: User
+    companyId: User
+    symbol: String!
+}

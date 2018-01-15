@@ -12,6 +12,7 @@ type Role {
 }
 
 interface User {
+    _id: String!
     profile: UserProfile
 }
 

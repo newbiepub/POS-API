@@ -1,4 +1,6 @@
 #Root Query
 type Query {
-    currentUser: User
+    currentUser: User,
+    products: [Product]
+    categories: [Category]
 }

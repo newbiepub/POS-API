@@ -1,0 +1,17 @@
+type ProductPrice {
+    name: String!,
+    price: Float,
+    currency: Currency
+}
+
+type Product {
+    _id: String!
+    name: String!
+    price: [ProductPrice]
+    unit: String!
+    description: String
+    categoryId: Category
+    detail: String
+    companyId: User
+    productCode: String
+}
