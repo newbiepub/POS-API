@@ -17,6 +17,7 @@ interface User {
 
 #Get Current Company
 type CurrentCompany implements User {
+    _id: String!
     roles: [Role]
     profile: UserProfile
     email: String
@@ -24,6 +25,7 @@ type CurrentCompany implements User {
 
 #Get Current Employee
 type CurrentEmployee implements User {
+    _id: String!
     roles: [Role]
     profile: UserProfile
     username: String
