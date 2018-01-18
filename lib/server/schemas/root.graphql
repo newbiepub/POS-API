@@ -1,6 +1,8 @@
 #Root Query
 type Query {
     currentUser: User,
-    products: [Product]
-    categories: [Category]
+    products(limit: Int, skip: Int): [Product]
+    categories(limit: Int, skip: Int): [Category]
+    currentUserInventory: Inventory
+    getAllPOS: [User]
 }

@@ -1,0 +1,29 @@
+type InventoryProduct {
+    productId: String!,
+    quantity: Int
+}
+
+type InvnetoryIngredient {
+    ingredientId: String!,
+    quantity: Int
+}
+
+interface Inventory {
+    productItem: [InventoryProduct],
+    ingredientItem: [InvnetoryIngredient],
+    description: String
+}
+
+type InventoryCompany implements Inventory{
+    productItem: [InventoryProduct],
+    ingredientItem: [InvnetoryIngredient],
+    description: String
+    companyId: String!
+}
+
+type InventoryEmployee implements Inventory{
+    productItem: [InventoryProduct],
+    ingredientItem: [InvnetoryIngredient],
+    description: String
+    employeeId: String!
+}
