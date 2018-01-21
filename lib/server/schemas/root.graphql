@@ -3,6 +3,11 @@ type Query {
     currentUser: User,
     products(limit: Int, skip: Int): [Product]
     categories(limit: Int, skip: Int): [Category]
-    currentUserInventory: Inventory
+    getUserInventory(type: String!, userId: String!): Inventory
     getAllPOS: [User]
+}
+
+#Root Mutation
+type Mutation {
+    addNewPOS(username: String!, password: String!, name: String!, address: String!, phoneNumber: String!): User
 }

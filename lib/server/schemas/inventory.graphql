@@ -1,5 +1,5 @@
 type InventoryProduct {
-    productId: String!,
+    productId: Product,
     quantity: Int
 }
 
