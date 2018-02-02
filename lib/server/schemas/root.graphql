@@ -3,11 +3,20 @@ type Query {
     currentUser: User,
     products(limit: Int, skip: Int): [Product]
     categories(limit: Int, skip: Int): [Category]
-    getUserInventory(type: String!, userId: String!): Inventory
+    getUserProductInventory(type: String!, userId: String!, limit: Int, skip: Int): [ProductInventory]
+    getUserIngredientInventory(type: String!, userId: String!, limit: Int, skip: Int): [IngredientInventory]
     getAllPOS: [User]
+}
+
+# Mutation Response Type
+type Response {
+    success: Boolean
 }
 
 #Root Mutation
 type Mutation {
     addNewPOS(username: String!, password: String!, name: String!, address: String!, phoneNumber: String!): User
+    addNewProduct (name: String!, price: [ProductPriceInput]!, unit: String!, description: String, categoryId: String!, productCode: String, quantity: Int): ProductInventory
+    updateProduct (_id: String! ,name: String!, price: [ProductPriceInput]!, unit: String!, description: String, categoryId: String!, productCode: String, quantity: Int): ProductInventory
+    deleteProduct (_id: String!): Response
 }

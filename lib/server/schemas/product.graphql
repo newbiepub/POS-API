@@ -15,3 +15,11 @@ type Product {
     companyId: User
     productCode: String
 }
+
+
+#Input Type For Mutation
+input ProductPriceInput {
+    name: String!,
+    price: Float,
+    currency: String!
+}

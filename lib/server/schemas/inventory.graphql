@@ -1,29 +1,39 @@
-type InventoryProduct {
-    productId: Product,
-    quantity: Int
-}
-
-type InvnetoryIngredient {
-    ingredientId: String!,
-    quantity: Int
-}
-
-interface Inventory {
-    productItem: [InventoryProduct],
-    ingredientItem: [InvnetoryIngredient],
+interface ProductInventory {
+    product: Product,
+    quantity: Int,
     description: String
 }
 
-type InventoryCompany implements Inventory{
-    productItem: [InventoryProduct],
-    ingredientItem: [InvnetoryIngredient],
+type ProductInventoryCompany implements ProductInventory{
+    product: Product,
+    quantity: Int,
     description: String
     companyId: String!
 }
 
-type InventoryEmployee implements Inventory{
-    productItem: [InventoryProduct],
-    ingredientItem: [InvnetoryIngredient],
+type ProductInventoryEmployee implements ProductInventory{
+    product: Product,
+    quantity: Int,
+    description: String
+    employeeId: String!
+}
+
+interface IngredientInventory {
+    ingredient: Ingredient
+    quantity: Int,
+    description: String
+}
+
+type IngredientInventoryCompany implements IngredientInventory{
+    ingredient: Ingredient
+    quantity: Int,
+    description: String
+    companyId: String!
+}
+
+type IngredientInventoryEmployee implements IngredientInventory{
+    ingredient: Ingredient
+    quantity: Int,
     description: String
     employeeId: String!
 }

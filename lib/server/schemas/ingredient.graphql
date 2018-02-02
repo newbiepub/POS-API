@@ -1,0 +1,8 @@
+type Ingredient {
+    _id: String!
+    name: String!
+    description: String
+    price: Float!
+    unit: String!
+    companyId: String
+}
