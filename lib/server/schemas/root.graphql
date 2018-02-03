@@ -19,4 +19,6 @@ type Mutation {
     addNewProduct (name: String!, price: [ProductPriceInput]!, unit: String!, description: String, categoryId: String!, productCode: String, quantity: Int): ProductInventory
     updateProduct (_id: String! ,name: String!, price: [ProductPriceInput]!, unit: String!, description: String, categoryId: String!, productCode: String, quantity: Int): ProductInventory
     deleteProduct (_id: String!): Response
+    addNewIngredient (name: String!, description: String, price: Float!, unit: String!, quantity: Int): IngredientInventory
+    updateIngredient(_id: String!, name: String!, description: String, price: Float!, unit: String!, quantity: Int): IngredientInventory
 }
