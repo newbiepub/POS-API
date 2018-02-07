@@ -1,4 +1,5 @@
 type ProductPrice {
+    _id: String!,
     name: String!,
     price: Float,
     currency: Currency

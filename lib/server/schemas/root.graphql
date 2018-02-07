@@ -6,6 +6,9 @@ type Query {
     getUserProductInventory(type: String!, userId: String!, limit: Int, skip: Int): [ProductInventory]
     getUserIngredientInventory(type: String!, userId: String!, limit: Int, skip: Int): [IngredientInventory]
     getAllPOS: [User]
+    paymentStatus: [PaymentStatus]
+    paymentMethod:[PaymentMethod]
+    currency(type:String!):[Currency]
 }
 
 # Mutation Response Type

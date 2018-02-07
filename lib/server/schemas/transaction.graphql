@@ -1,0 +1,10 @@
+type PaymentStatus {
+    _id: String!,
+    type: String!,
+    name: String!
+}
+type PaymentMethod {
+    _id: String!,
+    type: String!,
+    name: String!
+}
