@@ -1,4 +1,9 @@
 {
   "presets": ["env", "stage-3"],
+  "env": {
+    "production": {
+      "presets": ["minify"]
+    }
+  },
   "plugins": ["transform-runtime", "babel-plugin-inline-import"]
 }
