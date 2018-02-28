@@ -4,7 +4,10 @@
   "scripts": {
     "check-dependencies": "nsp check",
     "check-vulnerability": "snyk test",
-    "start": "nodemon --exec babel-node lib/server/index.js"
+    "dev": "nodemon --exec babel-node lib/server/index.js",
+    "build": "cross-env NODE_ENV=production && webpack -p --progress",
+    "start": "node dist/bundle.js",
+    "production": "npm run build && npm run start"
   },
   "license": "ISC",
   "dependencies": {
@@ -13,6 +16,7 @@
     "compression": "^1.7.1",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.4",
+    "cross-env": "^5.1.3",
     "crypto-js": "^3.1.9-1",
     "express": "^4.16.2",
     "express-minify": "^1.0.0",
@@ -28,8 +32,6 @@
     "lodash": "^4.17.4",
     "mongoose": "^5.0.6",
     "morgan": "^1.9.0",
-    "nodemon": "^1.14.11",
-    "nunjucks": "^3.0.1",
     "password-hash": "^1.2.2",
     "query-string": "^5.0.1",
     "subscriptions-transport-ws": "^0.9.5"
@@ -44,8 +46,13 @@
     "babel-preset-minify": "^0.3.0",
     "babel-preset-stage-3": "^6.24.1",
     "babel-register": "^6.26.0",
+    "nodemon": "^1.17.1",
     "nsp": "^3.1.0",
     "pm2": "^2.9.3",
-    "snyk": "^1.68.0"
+    "snyk": "^1.68.0",
+    "uglifyjs-webpack-plugin": "^1.2.2",
+    "webpack": "^4.0.1",
+    "webpack-cli": "^2.0.9",
+    "webpack-node-externals": "^1.6.0"
   }
 }
