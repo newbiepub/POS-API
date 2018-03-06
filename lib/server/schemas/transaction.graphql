@@ -8,3 +8,71 @@ type PaymentMethod {
     type: String!,
     name: String!
 }
+type TransactionProductItems{
+    _id:String,
+    productName: String,
+    quantity: Int,
+    price:TransactionProductPrice,
+    totalPrice:Float!,
+    unit:String,
+    discount:String
+}
+type TransactionProductPrice {
+    _id:String
+    name: String,
+    price: Float,
+    currency: TrasactionCurrency
+}
+type TrasactionCurrency{
+    name: String!
+    symbol: String!
+}
+type Transaction{
+    _id:String!,
+    employeeId:String,
+    companyId:String,
+    productItems:[TransactionProductItems]!,
+    type:String!,
+    issueRefund:String!,
+    issueRefundReason:String,
+    date:Date!,
+    paymentStatus:PaymentStatus!,
+    paymentMethod:PaymentMethod!,
+    dueDate:Date,
+    totalQuantity:Int!,
+    totalPrice:Float!,
+    paid:Float!,
+    description:String,
+}
+
+# input for mutation
+
+input PaymentStatusInput {
+    _id:String!,
+    type: String!,
+    name: String!,
+}
+input PaymentMethodInput {
+    _id:String!,
+    type: String!,
+    name: String!,
+}
+input TrasactionCurrencyInput {
+    name: String!
+    symbol: String!
+}
+input TransactionProductPriceInput {
+    _id:String
+    name: String!,
+    price: Float,
+    currency: TrasactionCurrencyInput
+}
+input TransactionProductItemsInput{
+    _id:String,
+    productName: String!,
+    quantity: Int!,
+    price:TransactionProductPriceInput!,
+    totalPrice:Float!,
+    unit:String!,
+    discount:String
+}

@@ -8,6 +8,7 @@ type Query {
     getAllPOS: [User]
     paymentStatus: [PaymentStatus]
     paymentMethod:[PaymentMethod]
+    getTransactionEmployee(limit:Int,skip:Int):[Transaction]
     currency(type:String!):[Currency]
 }
 
@@ -23,5 +24,17 @@ type Mutation {
     updateProduct (_id: String! ,name: String!, price: [ProductPriceInput]!, unit: String!, description: String, categoryId: String!, productCode: String, quantity: Int): ProductInventory
     deleteProduct (_id: String!): Response
     addNewIngredient (name: String!, description: String, price: Float!, unit: String!, quantity: Int): IngredientInventory
-    updateIngredient(_id: String!, name: String!, description: String, price: Float!, unit: String!, quantity: Int): IngredientInventory
+    updateIngredient(_id: String!, name: String!, description: String, price: Float!, unit: String!, quantity: Int): IngredientInventory,
+    createTransaction(productItems:[TransactionProductItemsInput]!,
+        type:String!,
+        paymentStatus:PaymentStatusInput!,
+        paymentMethod:PaymentMethodInput!,
+        date:Date,
+        dueDate:Date,
+        totalQuantity:Int!,
+        totalPrice:Float!,
+        paid:Float!,
+        description:String,
+    ):Transaction,
+    issueRefundTransaction(_id:String!,issueRefundReason: String!,refundDate:Date,productItems:[TransactionProductItemsInput]!):Transaction,
 }

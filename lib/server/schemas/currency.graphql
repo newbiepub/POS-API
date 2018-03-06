@@ -5,3 +5,8 @@ type Currency {
     companyId: User
     symbol: String!
 }
+
+input CurrencyInput {
+    name: String!
+    symbol: String!
+}

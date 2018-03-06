@@ -1,17 +1,25 @@
 interface ProductInventory {
+    _id:String,
     product: Product,
     quantity: Int,
     description: String
 }
 
 type ProductInventoryCompany implements ProductInventory{
+    _id:String,
     product: Product,
     quantity: Int,
     description: String
     companyId: String!
 }
-
+type updateProductInventoryQuantityFragment implements ProductInventory{
+    _id:String,
+    product: Product,
+    quantity: Int,
+    description: String
+}
 type ProductInventoryEmployee implements ProductInventory{
+    _id:String,
     product: Product,
     quantity: Int,
     description: String
