@@ -10,6 +10,7 @@ type PaymentMethod {
 }
 type TransactionProductItems{
     _id:String,
+    productId:String,
     productName: String,
     quantity: Int,
     price:TransactionProductPrice,
@@ -18,7 +19,7 @@ type TransactionProductItems{
     discount:Float
 }
 type TransactionProductPrice {
-    _id:String
+    _id:String,
     name: String,
     price: Float,
     currency: TransactionCurrency
@@ -58,7 +59,9 @@ type Transaction{
 }
 
 # input for mutation
-
+type TransactionAmount{
+    transactionAmount: Int!
+}
 input PaymentStatusInput {
     _id:String!,
     type: String!,
@@ -74,7 +77,7 @@ input TransactionCurrencyInput {
     symbol: String!
 }
 input TransactionProductPriceInput {
-    _id:String
+
     name: String!,
     price: Float,
     currency: TransactionCurrencyInput
@@ -91,7 +94,7 @@ input TransactionPaidInput{
     amount: Float!,
 }
 input TransactionProductItemsInput{
-    _id:String,
+    productId:String,
     productName: String!,
     quantity: Int!,
     price:TransactionProductPriceInput!,

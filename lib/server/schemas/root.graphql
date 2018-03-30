@@ -5,10 +5,12 @@ type Query {
     categories(limit: Int, skip: Int): [Category]
     getUserProductInventory(type: String!, userId: String!, limit: Int, skip: Int): [ProductInventory]
     getUserIngredientInventory(type: String!, userId: String!, limit: Int, skip: Int): [IngredientInventory]
+    getAmountUserProductInventory(type:String!,userId:String!):InventoryAmount
     getAllPOS: [User]
     paymentStatus: [PaymentStatus]
     paymentMethod:[PaymentMethod]
     getTransactionEmployee(limit:Int,skip:Int):[Transaction]
+    getAmountTransactionEmployee: TransactionAmount
     currency(type:String!):[Currency]
 }
 

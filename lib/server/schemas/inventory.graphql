@@ -12,6 +12,9 @@ type ProductInventoryCompany implements ProductInventory{
     description: String
     companyId: String!
 }
+type InventoryAmount {
+    inventoryAmount: Int,
+}
 type updateProductInventoryQuantityFragment implements ProductInventory{
     _id:String,
     product: Product,
