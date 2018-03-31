@@ -48,3 +48,47 @@ type IngredientInventoryEmployee implements IngredientInventory{
     description: String
     employeeId: String!
 }
+
+#Trader Information
+type Trader {
+    _id: String
+    name: String
+    phone: String
+    address: String
+    email: String
+    description: String
+}
+
+type InventoryHistoryProduct {
+    _id: String!
+    name: String!
+    price: [ProductPrice]
+    unit: String!
+    description: String
+    categoryId: Category
+    detail: String
+    companyId: User
+    productCode: String
+    quantity: Int
+}
+
+# Inventory history
+type InventoryHistory {
+    _id: String
+    products: [InventoryHistoryProduct]
+    type: String
+    from: Trader
+    to: Trader
+    totalQuantity: Int
+    totalPrice: Int
+    dateDelivered: Date
+    dateReceived: Date
+}
+
+# Product input for sending to server
+# POS send product need importing from company
+input InventoryRequestPayload {
+    _id: String!,
+    quantity: Int!,
+    type: String!
+}
