@@ -7,3 +7,5 @@ node_modules
 
 #YARN
 yarn-error.log
+.env
+webpack.config.js
