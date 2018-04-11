@@ -45,7 +45,7 @@ type Transaction{
     companyId:String,
     productItems:[TransactionProductItems]!,
     type:String!,
-    issueRefund:String!,
+    issueRefund:Boolean!,
     issueRefundReason:String,
     paymentStatus:PaymentStatus!,
     paymentMethod:PaymentMethod!,
