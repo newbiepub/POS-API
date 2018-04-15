@@ -24,3 +24,10 @@ input ProductPriceInput {
     price: Float,
     currency: String!
 }
+
+# Product params export Company To POS
+input ProductExport {
+    _id: String!
+    quantity: Int!,
+    salePrice: Float!
+}
