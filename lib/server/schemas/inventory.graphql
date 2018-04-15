@@ -80,7 +80,7 @@ type InventoryHistory {
     from: Trader
     to: Trader
     totalQuantity: Int
-    totalPrice: Int
+    totalPrice: Float
     dateDelivered: Date
     dateReceived: Date
 }
