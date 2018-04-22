@@ -15,6 +15,7 @@ type TransactionProductItems{
     quantity: Int,
     price:TransactionProductPrice,
     totalPrice:Float!,
+    priceImport:Float!,
     unit:String,
     discount:Float
 }
@@ -99,6 +100,7 @@ input TransactionProductItemsInput{
     quantity: Int!,
     price:TransactionProductPriceInput!,
     totalPrice:Float!,
+    priceImport:Float!,
     unit:String!,
     discount:Float
 }
