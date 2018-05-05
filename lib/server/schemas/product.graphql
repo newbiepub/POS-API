@@ -1,14 +1,12 @@
 type ProductPrice {
     _id: String!,
     name: String!,
-    price: Float,
-    currency: Currency
+    price: Float
 }
 
 type Product {
     _id: String!
     name: String!
-    price: [ProductPrice]
     unit: String!
     description: String
     categoryId: Category

@@ -1,6 +1,8 @@
 interface ProductInventory {
     _id:String,
     product: Product,
+    importPrice: Float
+    prices: [ProductPrice]
     quantity: Int,
     description: String
 }
@@ -8,6 +10,8 @@ interface ProductInventory {
 type ProductInventoryCompany implements ProductInventory{
     _id:String,
     product: Product,
+    importPrice: Float
+    prices: [ProductPrice]
     quantity: Int,
     description: String
     companyId: String!
@@ -18,12 +22,16 @@ type InventoryAmount {
 type updateProductInventoryQuantityFragment implements ProductInventory{
     _id:String,
     product: Product,
+    importPrice: Float
+    prices: [ProductPrice]
     quantity: Int,
     description: String
 }
 type ProductInventoryEmployee implements ProductInventory{
     _id:String,
     product: Product,
+    importPrice: Float
+    prices: [ProductPrice]
     quantity: Int,
     description: String
     employeeId: String!
@@ -60,14 +68,13 @@ type Trader {
 }
 
 type InventoryHistoryProduct {
-    _id: String!
     name: String!
-    price: [ProductPrice]
+    prices: [ProductPrice]
+    importPrice: Float
     unit: String!
     description: String
-    categoryId: Category
+    category: String
     detail: String
-    companyId: User
     productCode: String
     quantity: Int
 }

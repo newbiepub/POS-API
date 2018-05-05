@@ -31,10 +31,7 @@ type Mutation {
     # Inventory
     # Inventory - POS request to Company
     requestPOSToCompany (employeeId: String!, products: [ProductExport]!, confirmOption: Boolean): Response
-    # Inventory - Company Accept Request and export to POS
-    #companyAcceptRequestFromPOS()
-    # Invnetory - POS receive products and confirm then products will be imported to POS and exported from company
-    #POSConfirmImportFromCompany()
+
     createTransaction(productItems:[TransactionProductItemsInput]!,
         type:String!,
         paymentStatus:PaymentStatusInput!,
