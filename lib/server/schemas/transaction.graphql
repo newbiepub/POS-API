@@ -23,7 +23,6 @@ type TransactionProductPrice {
     _id:String,
     name: String,
     price: Float,
-    currency: TransactionCurrency
 }
 type TransactionCurrency{
     name: String!
@@ -81,7 +80,6 @@ input TransactionProductPriceInput {
 
     name: String!,
     price: Float,
-    currency: TransactionCurrencyInput
 }
 input TransactionCustomerInput {
     name: String
@@ -91,10 +89,12 @@ input TransactionCustomerInput {
     description: String
 }
 input TransactionPaidInput{
+    _id:String,
     date: Date,
     amount: Float!,
 }
 input TransactionProductItemsInput{
+    _id:String,
     productId:String,
     productName: String!,
     quantity: Int!,
@@ -103,4 +103,22 @@ input TransactionProductItemsInput{
     priceImport:Float!,
     unit:String!,
     discount:Float
+}
+input TransactionInput{
+    _id:String!,
+    employeeId:String,
+    companyId:String,
+    productItems:[TransactionProductItemsInput]!,
+    type:String!,
+    issueRefund:Boolean!,
+    issueRefundReason:String,
+    paymentStatus:PaymentStatusInput!,
+    paymentMethod:PaymentMethodInput!,
+    dueDate:Date,
+    totalQuantity:Int!,
+    totalPrice:Float!,
+    createdAt:Date!,
+    paid:[TransactionPaidInput]!,
+    customer: TransactionCustomerInput
+    description:String,
 }

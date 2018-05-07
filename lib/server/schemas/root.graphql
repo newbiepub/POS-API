@@ -50,4 +50,5 @@ type Mutation {
     ):Transaction,
     updateTransaction(_id: String!, dueDate:Date,paid:TransactionPaidInput!,description:String):Transaction,
     issueRefundTransaction(_id:String!,issueRefundReason: String!,refundDate:Date,productItems:[TransactionProductItemsInput]!):Transaction,
+    sendMailInvoice( transaction: TransactionInput!,email: String!) : Boolean
 }
