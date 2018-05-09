@@ -13,6 +13,7 @@ type Query {
     getAmountTransactionEmployee: TransactionAmount
     currency(type:String!):[Currency]
     getUserInventoryHistory(type: String!): [InventoryHistory]
+    FETCH_ALL_DISCOUNT: [Discount]
 }
 
 # Mutation Response Type
@@ -32,6 +33,12 @@ type Mutation {
     # Inventory - POS request to Company
     requestPOSToCompany (employeeId: String!, products: [ProductExport]!, confirmOption: Boolean): Response
 
+    # Discount
+    CREATE_DISCOUNT (products: [String]!, employeeIds: [String]!,
+        appliedDate: Date, dueDate: Date,name: String!,
+        description: String, type: String!, value: Float!): Discount
+
+    # Transaction
     createTransaction(productItems:[TransactionProductItemsInput]!,
         type:String!,
         paymentStatus:PaymentStatusInput!,
