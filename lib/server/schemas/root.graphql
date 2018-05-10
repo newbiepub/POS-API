@@ -24,11 +24,8 @@ type Response {
 #Root Mutation
 type Mutation {
     addNewPOS(username: String!, password: String!, name: String!, address: String!, phoneNumber: String!): User
-    addNewProduct (name: String!, price: [ProductPriceInput]!, unit: String!, description: String, categoryId: String!, productCode: String, quantity: Int): ProductInventory
-    updateProduct (_id: String! ,name: String!, price: [ProductPriceInput]!, unit: String!, description: String, categoryId: String!, productCode: String, quantity: Int): ProductInventory
-    deleteProduct (_id: String!): Response
-    addNewIngredient (name: String!, description: String, price: Float!, unit: String!, quantity: Int): IngredientInventory
-    updateIngredient(_id: String!, name: String!, description: String, price: Float!, unit: String!, quantity: Int): IngredientInventory,
+    # Product
+    UPDATE_PRODUCT(productId: String!):Response
     # Inventory
     # Inventory - POS request to Company
     requestPOSToCompany (employeeId: String!, products: [ProductExport]!, confirmOption: Boolean): Response
