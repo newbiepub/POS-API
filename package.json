@@ -4,7 +4,7 @@
   "scripts": {
     "check-dependencies": "nsp check",
     "check-vulnerability": "snyk test",
-    "dev": "nodemon --exec babel-node lib/server/index.js",
+    "dev": "nodemon --exec babel-node lib/server/index.js --delay 500ms",
     "build": "cross-env NODE_ENV=production && webpack -p --progress",
     "start": "node dist/bundle.js",
     "production": "npm run build && npm run start"

@@ -20,7 +20,6 @@ type Product {
 input ProductPriceInput {
     name: String!,
     price: Float,
-    currency: String!
 }
 
 # Product params export Company To POS
@@ -28,4 +27,9 @@ input ProductExport {
     _id: String!
     quantity: Int!,
     salePrice: Float!
+}
+
+input ProductRequest {
+    _id: String!
+    quantity: Int!
 }

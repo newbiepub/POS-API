@@ -25,11 +25,15 @@ type Response {
 type Mutation {
     addNewPOS(username: String!, password: String!, name: String!, address: String!, phoneNumber: String!): User
     # Product
-    UPDATE_PRODUCT(productId: String!):Response
+    UPDATE_PRODUCT(productId: String!, name: String, quantity: Int, prices: [ProductPriceInput],
+        description: String, unit: String, productCode: String):Response
     # Inventory
     # Inventory - POS request to Company
     requestPOSToCompany (employeeId: String!, products: [ProductExport]!, confirmOption: Boolean): Response
-
+    CREATE_INVENTORY_ORDER (employeeId: String!, products: [ProductExport]): Response
+    APPROVE_INVENTORY_ORDER(activityId: String!, employeeId: String): Response
+    REQUEST_INVENTORY_ORDER(products: [ProductRequest]!): Response
+    REVERT_INVENTORY_ORDER(activityId: String!, password: String!): Response
     # Discount
     CREATE_DISCOUNT (products: [String]!, employeeIds: [String]!,
         appliedDate: Date, dueDate: Date,name: String!,
