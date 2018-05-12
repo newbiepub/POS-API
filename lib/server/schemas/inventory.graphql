@@ -99,3 +99,12 @@ input InventoryRequestPayload {
     quantity: Int!,
     type: String!
 }
+
+type InventoryActivityLogger {
+    message: String!
+    data: String
+    type: String
+    companyId: String
+    employeeId: String
+    createdAt: Date
+}

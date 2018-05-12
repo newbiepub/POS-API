@@ -14,6 +14,8 @@ type Query {
     currency(type:String!):[Currency]
     getUserInventoryHistory(type: String!): [InventoryHistory]
     FETCH_ALL_DISCOUNT: [Discount]
+    FETCH_CATEGORY: [Category]
+    FETCH_LOGS: [InventoryActivityLogger]
 }
 
 # Mutation Response Type
@@ -34,6 +36,7 @@ type Mutation {
     APPROVE_INVENTORY_ORDER(activityId: String!, employeeId: String): Response
     REQUEST_INVENTORY_ORDER(products: [ProductRequest]!): Response
     REVERT_INVENTORY_ORDER(activityId: String!, password: String!): Response
+    CREATE_CATEGORY(name: String!, description: String): Category
     # Discount
     CREATE_DISCOUNT (products: [String]!, employeeIds: [String]!,
         appliedDate: Date, dueDate: Date,name: String!,
