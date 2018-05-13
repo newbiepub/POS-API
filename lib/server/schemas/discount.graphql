@@ -1,4 +1,18 @@
 type Discount {
+    _id: String,
+    products: [String]
+    companyId: String
+    employeeIds: [String]
+    name: String
+    type: String
+    value: Float
+    description: String
+    appliedDate: Date
+    dueDate: Date
+    createdAt: Date
+}
+input DiscountInput {
+    _id: String,
     products: [String]
     companyId: String
     employeeIds: [String]

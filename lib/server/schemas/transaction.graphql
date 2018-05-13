@@ -17,7 +17,7 @@ type TransactionProductItems{
     totalPrice:Float!,
     priceImport:Float!,
     unit:String,
-    discount:Float
+    discounts:[Discount]
 }
 type TransactionProductPrice {
     _id:String,
@@ -102,7 +102,7 @@ input TransactionProductItemsInput{
     totalPrice:Float!,
     priceImport:Float!,
     unit:String!,
-    discount:Float
+    discounts:[DiscountInput]
 }
 input TransactionInput{
     _id:String!,
