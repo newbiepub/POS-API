@@ -28,7 +28,7 @@ type Response {
 type Mutation {
     addNewPOS(username: String!, password: String!, name: String!, address: String!, phoneNumber: String!): User
     # Product
-    UPDATE_PRODUCT(productId: String!, name: String, quantity: Int, prices: [ProductPriceInput],
+    UPDATE_PRODUCT(productId: String!, name: String, quantity: Int, importPrice: Float,
         description: String, unit: String, productCode: String):Response
     # Inventory
     # Inventory - POS request to Company
@@ -42,7 +42,17 @@ type Mutation {
     CREATE_DISCOUNT (products: [String]!, employeeIds: [String]!,
         appliedDate: Date, dueDate: Date,name: String!,
         description: String, type: String!, value: Float!): Discount
-
+    # Update Discount
+    UPDATE_DISCOUNT(
+        discountId: String,
+        products: [String]!,
+        employeeIds: [String]!,
+        appliedDate: Date,
+        dueDate: Date,
+        name: String!,
+        description: String,
+        type: String!,
+        value: Float!): Discount
     # Transaction
     createTransaction(productItems:[TransactionProductItemsInput]!,
         type:String!,
