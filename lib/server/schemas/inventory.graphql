@@ -108,3 +108,33 @@ type InventoryActivityLogger {
     employeeId: String
     createdAt: Date
 }
+
+# Inventory activity
+
+type InventoryActivityProducts{
+    _id: String,
+    quantity: Int,
+    salePrice: Float,
+}
+type InventoryActivityActor{
+    _id: String,
+    name: String,
+    phone: String,
+    address: String,
+    email: String,
+    description: String,
+}
+type InventoryActivity {
+    _id: String,
+    products:[InventoryActivityProducts],
+    totalQuantity: Int,
+    totalPrice: Float,
+    from:InventoryActivityActor,
+    to: InventoryActivityActor,
+    status: String,
+    type:String,
+    dateRequest: Date,
+    ingredients: [InventoryActivityProducts],
+    paid: Float,
+    dateReceived: Date
+}
