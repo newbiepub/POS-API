@@ -37,7 +37,8 @@ type Mutation {
     APPROVE_INVENTORY_ORDER(activityId: String!, employeeId: String): Response
     REQUEST_INVENTORY_ORDER(products: [ProductRequest]!): Response
     REVERT_INVENTORY_ORDER(activityId: String!, password: String!): Response
-    CREATE_CATEGORY(name: String!, description: String): Category
+    CREATE_CATEGORY(name: String!, description: String, products: [String]): Category
+    UPDATE_CATEGORY(categoryId: String!, name: String, products: [String]): Response
     # Discount
     CREATE_DISCOUNT (products: [String]!, employeeIds: [String]!,
         appliedDate: Date, dueDate: Date,name: String!,
