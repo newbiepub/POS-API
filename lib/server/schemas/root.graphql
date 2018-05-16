@@ -17,6 +17,8 @@ type Query {
     GET_DISCOUNT_EMPLOYEE: [Discount]
     FETCH_CATEGORY: [Category]
     FETCH_LOGS: [InventoryActivityLogger]
+    FETCH_INVENTORY_ACTIVITY_EMPLOYEE(limit:Int ,skip: Int): [InventoryActivity],
+    FETCH_INVENTORY_ACTIVITY_EMPLOYEE_AMOUNT: Int
 }
 
 # Mutation Response Type
