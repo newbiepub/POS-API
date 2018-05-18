@@ -37,7 +37,7 @@ type Mutation {
     # Inventory - POS request to Company
     requestPOSToCompany (employeeId: String!, products: [ProductExport]!, confirmOption: Boolean): Response
     CREATE_INVENTORY_ORDER (employeeId: String!, products: [ProductExport], activityId: String): Response
-    APPROVE_INVENTORY_ORDER(activityId: String!, employeeId: String): Response
+    CONFIRM_INVENTORY_ORDER(activityId: String!): Response
     REQUEST_INVENTORY_ORDER(products: [ProductRequest]!): Response
     REVERT_INVENTORY_ORDER(activityId: String!, password: String!): Response
     CREATE_CATEGORY(name: String!, description: String, products: [String]): Category
