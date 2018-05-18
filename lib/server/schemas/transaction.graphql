@@ -8,12 +8,17 @@ type PaymentMethod {
     type: String!,
     name: String!
 }
+type TransactionCategory{
+    categoryId: String,
+    categoryName: String,
+}
 type TransactionProductItems{
     _id:String,
     productId:String,
     productName: String,
     quantity: Int,
     price:TransactionProductPrice,
+    category:TransactionCategory,
     totalPrice:Float!,
     priceImport:Float!,
     unit:String,
@@ -93,11 +98,16 @@ input TransactionPaidInput{
     date: Date,
     amount: Float!,
 }
+input TransactionCategoryInput{
+    categoryId: String,
+    categoryName: String,
+}
 input TransactionProductItemsInput{
     _id:String,
     productId:String,
     productName: String!,
     quantity: Int!,
+    category: TransactionCategoryInput,
     price:TransactionProductPriceInput!,
     totalPrice:Float!,
     priceImport:Float!,
