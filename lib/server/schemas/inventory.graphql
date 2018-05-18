@@ -111,6 +111,12 @@ type InventoryActivityLogger {
 
 # Inventory activity
 
+type InventoryActivityProductsDetail {
+    _id: String
+    name: String
+    quantity: Int
+}
+
 type InventoryActivityProducts{
     _id: String,
     quantity: Int,
@@ -126,7 +132,7 @@ type InventoryActivityActor{
 }
 type InventoryActivity {
     _id: String,
-    products:[InventoryActivityProducts],
+    products:[InventoryActivityProductsDetail],
     totalQuantity: Int,
     totalPrice: Float,
     from:InventoryActivityActor,
