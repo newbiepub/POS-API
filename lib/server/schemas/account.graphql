@@ -21,7 +21,8 @@ type CurrentCompany implements User {
     _id: String!
     roles: [Role]
     profile: UserProfile
-    email: String
+    email: String,
+    status: String
 }
 
 #Get Current Employee
@@ -30,5 +31,14 @@ type CurrentEmployee implements User {
     roles: [Role]
     profile: UserProfile
     username: String
-    companyId: String
+    companyId: String,
+    status: String
+}
+
+type ResponseUser {
+    _id: String!
+    roles: [Role]
+    profile: UserProfile
+    username: String
+    status: String
 }

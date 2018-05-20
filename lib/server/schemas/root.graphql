@@ -76,5 +76,8 @@ type Mutation {
     ):Transaction,
     updateTransaction(_id: String!, dueDate:Date,paid:TransactionPaidInput!,description:String):Transaction,
     issueRefundTransaction(_id:String!,issueRefundReason: String!,refundDate:Date,productItems:[TransactionProductItemsInput]!):Transaction,
-    sendMailInvoice( transaction: TransactionInput!,email: String!) : Boolean
+    sendMailInvoice( transaction: TransactionInput!,email: String!) : Boolean,
+    #POS MANAGEMENT
+    DEACTIVATE_POS(employeeId: String!): ResponseUser,
+    UPDATE_POS(employeeId: String!, username: String!, password: String, name: String, address: String, phoneNumber: String): ResponseUser
 }
