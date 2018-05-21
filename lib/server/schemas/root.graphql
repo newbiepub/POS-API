@@ -10,6 +10,7 @@ type Query {
     paymentStatus: [PaymentStatus]
     paymentMethod:[PaymentMethod]
     getTransactionEmployee(limit:Int,skip:Int):[Transaction]
+    getTransactionById(employeeId: String!, limit: Int, skip: Int): [Transaction]
     getAmountTransactionEmployee: TransactionAmount
     currency(type:String!):[Currency]
     getUserInventoryHistory(type: String!): [InventoryHistory]
